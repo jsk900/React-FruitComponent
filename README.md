@@ -12,10 +12,3 @@ The user will see a list of 4 fruits, next to each fruit there is color with a c
 **Bonus**
 
 -   The user should have the option to delete all
-
-### Rules
-
--   This is an individual assignment.
--   Deadline: 1 hour.
--   Use **Git properly**
--   Feel free to document your code with comments.

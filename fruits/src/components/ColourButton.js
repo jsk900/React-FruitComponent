@@ -7,9 +7,7 @@ export class ColourButton extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { colour: this.props.colour };
-
-    this.handleClick = this.handleClick.bind(this);
+    this.state = { colour: this.props.colour, textColour: '' };
   }
 
   //This function returns a random number
@@ -22,7 +20,7 @@ export class ColourButton extends Component {
 
   // The click handler calls our random number generator which will give us
   // our random colour to change the state with setState.
-  handleClick() {
+  handleClick = () => {
     const coloursArr = [
       '#e5ccff',
       '#660000',
@@ -38,18 +36,38 @@ export class ColourButton extends Component {
       '#006600',
       '#cccc00'
     ];
+
+    const textColoursArr = [
+      '#181817',
+      '#e0e0d9',
+      '#e0e0d9',
+      '#181817',
+      '#181817',
+      '#181817',
+      '#181817',
+      '#181817',
+      '#e0e0d9',
+      '#e0e0d9',
+      '#181817',
+      '#e0e0d9',
+      '#181817'
+    ];
     let result = this.getRandomIntInclusive(0, 12);
     this.setState(() => ({
-      colour: coloursArr[result]
+      colour: coloursArr[result],
+      textColour: textColoursArr[result]
     }));
-  }
+  };
 
   render() {
     return (
       <button
         className="colourButton"
         onClick={this.handleClick}
-        style={{ backgroundColor: this.state.colour }}
+        style={{
+          backgroundColor: this.state.colour,
+          color: this.state.textColour
+        }}
       >
         {this.props.name}
       </button>

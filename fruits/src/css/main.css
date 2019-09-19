@@ -86,8 +86,10 @@ img {
   border: none;
   outline: none;
   font-size: 0.9em;
+  font-weight: bold;
   padding: 8px;
   margin: 10px;
+  color: #181817;
   cursor: pointer;
 }
 

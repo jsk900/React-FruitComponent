@@ -1,14 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 // Button class component accepting props from our Fruit component.App.
 // Here we set up state for the colour of the button.
 // We set up binding for our click handler.
-export class ColourButton extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = { colour: this.props.colour, textColour: '' };
-  }
+export class ColourButton extends PureComponent {
+  state = { colour: this.props.colour, textColour: '' };
 
   //This function returns a random number
   getRandomIntInclusive(min, max) {
@@ -52,6 +48,7 @@ export class ColourButton extends Component {
       '#e0e0d9',
       '#181817'
     ];
+
     let result = this.getRandomIntInclusive(0, 12);
     this.setState(() => ({
       colour: coloursArr[result],
